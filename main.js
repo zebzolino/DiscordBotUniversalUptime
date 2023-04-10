@@ -7,7 +7,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     setInterval(() => {
         exec('tasklist', function(err, stdout, stderr) {
-            if (stdout.indexOf('YourExeNameHere') > -1) {
+            if (stdout.indexOf('yourexename.exe') > -1) {
                 exec('wmic cpu get loadpercentage', function(err, stdout, stderr) {
                     let cpuLoad = stdout.split('\n')[1].trim();
                     exec('wmic OS get FreePhysicalMemory /Value', function(err, stdout, stderr) {
